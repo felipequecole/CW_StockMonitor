@@ -33,7 +33,7 @@
 		else {
 			// if it's still expensive, wait 5 seconds and try again
 			setTimeout(function(){
-				stock_monitor.bind(resource_code, quantity, max_price, gold)
+				stock_monitor(resource_code, quantity, max_price, gold)
 			}, 5000);
 		}
 	}
