@@ -17,9 +17,13 @@
 		response = $('.im_message_text').last();
 		// get smallest price
 		cheaper = response.contents()[3];
-		cheaper = cheaper.wholeText;
-		price = cheaper.split("for");
-		price = price[price.length-1];
+		if (typeof(cheaper) != "undefined") {
+			cheaper = cheaper.wholeText;
+			price = cheaper.split("for");
+			price = price[price.length-1]; 
+		} else {
+			price = 100000; 
+		}
 		if (price <= max_price) {
 			if (gold != false) {
 				quantity = Math.floor(gold / price); 
